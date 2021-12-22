@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="myStyle.css">
+</head>
+<body>
+   <div id="wholeBlock">
+<script type="text/javascript">
+
+   var rand=Math.floor(Math.random()*100 )+1;
+   var min=1,max=100;
+   
+
+   
+   
+   function run(){
+      var num=document.getElementById("input").value;
+      if(num==rand){
+         alert('BINGO!');
+       
+      }else if(num>rand){
+         max=num;
+         write();
+      }else{
+         min=num;
+         write();
+      }
+   }
+      
+     
+     function write(){
+      var newLine=document.createElement('div');
+      var textNode=document.createTextNode(min+'~'+max);
+      newLine.appendChild(textNode);
+      document.getElementById('result').appendChild(newLine);
+      
+     }
+   
+</script>
+
+<div class="c1">
+      <h1>Guessing Game</h1>
+   </div>
+   <form action="#">
+   <p>Your guess(1-100)</p>
+      
+      <input id= "input" type="text" size="80">
+      <div class="inputB">
+      <p><input type="button" onclick="run()" value="run"></p>
+   </div>
+   </form>
+   
+   <div id="result" class="c2">
+      <div>Result</div>
+   </div>
+</div>
+	
+</body>
+</html>
